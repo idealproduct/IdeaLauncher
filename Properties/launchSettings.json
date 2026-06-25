@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IdeaLauncher (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "IdeaLauncher (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
