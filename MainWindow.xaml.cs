@@ -28,6 +28,7 @@ namespace IdeaLauncher
         public MainWindow()
         {
             InitializeComponent();
+            RootFrame.Navigate(typeof(MainPage));
         }
 
         private void InstanceList_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
@@ -40,38 +41,36 @@ namespace IdeaLauncher
 
         }
 
-        private async void CreateInstance_Click(object sender, RoutedEventArgs e)
-        {
-            var page = new InstanceCreatePage();
+        //private async void CreateInstance_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var page = new InstanceCreatePage();
 
-            page.XamlRoot = Content.XamlRoot;
+        //    page.XamlRoot = Content.XamlRoot;
 
-            //var result = await page.;
+        //    if (page != null)
+        //    {
+        //        CreateInstanceFrame.Navigate(typeof(InstanceCreatePage));
+        //    }
 
-            //if (result != ContentDialogResult.Primary)
-            //{
-            //    return;
-            //}
+        //    if (string.IsNullOrWhiteSpace(page.InstanceName))
+        //        return;
 
-            if (string.IsNullOrWhiteSpace(page.InstanceName))
-                return;
+        //    var instance = new InstanceInfo
+        //    {
+        //        Name =
+        //            page.InstanceName,
 
-            var instance = new InstanceInfo
-            {
-                Name =
-                    page.InstanceName,
+        //        MinecraftVersion =
+        //            page.MinecraftVersion,
 
-                MinecraftVersion =
-                    page.MinecraftVersion,
+        //        Loader =
+        //            page.Loader,
 
-                Loader =
-                    page.Loader,
+        //        RamMB =
+        //            page.RamMB,
 
-                RamMB =
-                    page.RamMB,
-
-            };
-        }
+        //    };
+        //}
     }
 }
 

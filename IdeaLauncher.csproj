@@ -13,6 +13,9 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Views\MainPage.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -37,8 +40,15 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CmlLib.Core" Version="4.0.6" />
+    <PackageReference Include="CmlLib.Core.Auth.Microsoft" Version="3.3.1" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1839" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\InstanceCreatePage.xaml">

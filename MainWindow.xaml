@@ -8,69 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Title="IdeaLauncher">
-
+    
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Frame x:Name="RootFrame"/>
 
-        <!--left-->
-        <StackPanel
-            Grid.Column="0"
-            Margin="10"
-            Spacing="10">
-
-            <TextBlock
-                Text="Instance"
-                FontSize="20"/>
-
-            <ListView
-                x:Name="InstanceList"
-                DoubleTapped="InstanceList_DoubleTapped"
-                SelectionChanged="InstanceList_SelectionChanged"
-                Height="400"/>
-
-            <Button
-                Content="Create Instance"
-                Click="CreateInstance_Click"/>
-
-        </StackPanel>
-
-        <!--Right-->
-
-        <StackPanel
-            Grid.Column="1"
-            Margin="20"
-            Spacing="12">
-
-            <TextBlock
-                Text="Instance Detials"
-                FontSize="25"/>
-
-            <TextBlock
-                Text="name"/>
-
-            <TextBlock
-                x:Name="NameText"/>
-
-            <TextBlock
-                Text="Version"/>
-
-            <TextBlock
-                x:Name="VersionText"/>
-
-            <TextBlock
-                Text="Loader"/>
-
-            <TextBlock
-                x:Name="LoadeerText"/>
-
-        </StackPanel>
-
-    </Grid>
 </Window>

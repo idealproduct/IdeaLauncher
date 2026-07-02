@@ -69,4 +69,32 @@ public sealed partial class InstanceCreatePage : Page
 
     public string MinecraftVersion =>
         VersionBox.SelectedItem?.ToString() ?? "latest";
+
+    private void GoToMainPage_Click(object sender, RoutedEventArgs e)
+    {
+        this.Frame.GoBack();
+    }
+
+    private void CreateInstance_Click(object sender, RoutedEventArgs e)
+    {
+
+        var instance = new InstanceInfo
+        {
+            Name =
+                InstanceName,
+
+            MinecraftVersion =
+                MinecraftVersion,
+
+            Loader =
+                Loader,
+
+            RamMB =
+                RamMB,
+
+        };
+
+        this.Frame.Navigate(typeof(MainPage));
+    }
 }
+

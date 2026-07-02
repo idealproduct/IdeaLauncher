@@ -10,24 +10,29 @@
 
     <Grid>
 
-        <StackPanel Spacing="12">
+        <StackPanel Spacing="20"
+                    Margin="15">
 
             <TextBox
                 x:Name="NameBox"
                 Header="Instance Name"
-                PlaceholderText="type Instance Name"/>
+                PlaceholderText="type Instance Name"
+                FontSize="15"/>
 
             <TextBlock 
                 Text="Minecraft Version"
-                Margin="0,12,0,4"/>
+                Margin="0,12,0,4"
+                FontSize="15"/>
 
             <ComboBox
                 x:Name="VersionBox"
-                PlaceholderText="Choose Version"/>
+                PlaceholderText="Choose Version"
+                FontSize="15"/>
 
             <ComboBox
                 x:Name="LoaderBox"
-                Header="Loader">
+                Header="Loader"
+                FontSize="15">
 
                 <ComboBoxItem Content="Vanilla"/>
                 <ComboBoxItem Content="Forge"/>
@@ -39,7 +44,19 @@
             <NumberBox
                 x:Name="RamBox"
                 Header="Memory(MB)"
-                Value="4096"/>
+                Value="4096"
+                FontSize="15"/>
+
+            <Button
+                Content="Back"
+                x:Name="GoToMainPage"
+                Click="GoToMainPage_Click"
+                FontSize="15"/>
+
+            <Button
+                Content="CreateInstance"
+                Click="CreateInstance_Click"
+                FontSize="15"/>
 
         </StackPanel>
 
