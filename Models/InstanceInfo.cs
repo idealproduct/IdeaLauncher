@@ -1,4 +1,10 @@
-﻿namespace IdeaLauncher.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IdeaLauncher.Models;
 
 public class InstanceInfo
 {
@@ -8,7 +14,7 @@ public class InstanceInfo
 
     public string Loader { get; set; } = "Vanilla";
 
-    public int RamMb { get; set; } = 4096;
+    public int RamMB { get; set; } = 4096;
 
     public override string ToString()
     {
@@ -21,3 +27,4 @@ public class InstanceInfo
         set;
     } = "";
 }
+
