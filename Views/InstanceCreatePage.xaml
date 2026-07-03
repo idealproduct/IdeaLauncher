@@ -27,7 +27,8 @@
             <ComboBox
                 x:Name="VersionBox"
                 PlaceholderText="Choose Version"
-                FontSize="15"/>
+                FontSize="15"
+                ItemsSource="{x:Bind MinecraftVersions}"/>
 
             <ComboBox
                 x:Name="LoaderBox"

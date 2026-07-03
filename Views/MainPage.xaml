@@ -1,75 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="IdeaLauncher.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:IdeaLauncher.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:local="using:IdeaLauncher" xmlns:Model="using:IdeaLauncher.Models">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Grid RowDefinitions="Auto, *">
 
-        <!--left-->
-        <StackPanel
-            Grid.Column="0"
-            Margin="10"
-            Spacing="10">
+        <CommandBar Grid.Row="0" Background="Transparent" IsOpen="False">
+            <AppBarButton Icon="Back" Label="返回上一頁" Click="Back_Click"/>
+            <AppBarButton Icon="Add" Label="創建" Click="CreateInstance_Click"/>
+            <AppBarButton Icon="Download" Label="導入"/>
+            <AppBarButton Icon="Bold" Label="建立群組"/>
+            <CommandBar.SecondaryCommands>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
 
-            <TextBlock
-                Text="Instance"
-                FontSize="20"/>
+        <GridView 
+            Grid.Row="1" 
+            x:Name="InstanceGridView"
+            Padding="20"
+            SelectionMode="Single"
+            IsItemClickEnabled="True"
+            ItemClick="InstanceGridView_ItemClick"
+            DoubleTapped="InstanceGridView_DoubleTapped">
 
-            <ListView
-                x:Name="InstanceList"
-                DoubleTapped="InstanceList_DoubleTapped"
-                SelectionChanged="InstanceList_SelectionChanged"
-                Height="400"/>
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="Model:InstanceItem">
+                    <Grid Width="180" Height="240" Margin="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"/>
 
-            <Button
-                Content="Create Instance"
-                Click="CreateInstance_Click"/>
+                        <Grid RowDefinitions="*, Auto">
+                            <Image Grid.Row="0" Source="{x:Bind ImagePath}" Stretch="UniformToFill"/>
 
+                            <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                        Orientation="Horizontal" Background="#80000000" CornerRadius="4" Margin="6" Padding="6,2">
+                                <TextBlock Text="{x:Bind MinecraftVersion}" FontSize="12" Foreground="White"/>
+                            </StackPanel>
 
-        </StackPanel>
+                            <StackPanel Grid.Row="1" Padding="12" Spacing="4" Background="{ThemeResource SolidBackgroundFillColorBaseBrush}">
+                                <TextBlock Text="{x:Bind Name}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{x:Bind Author}" FontSize="12" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
 
-        <!--Right-->
-
-        <StackPanel
-            Grid.Column="1"
-            Margin="20"
-            Spacing="12">
-
-            <TextBlock
-                Text="Instance Detials"
-                FontSize="25"/>
-
-            <TextBlock
-                Text="name"/>
-
-            <TextBlock
-                x:Name="NameText"/>
-
-            <TextBlock
-                Text="Version"/>
-
-            <TextBlock
-                x:Name="VersionText"/>
-
-            <TextBlock
-                Text="Loader"/>
-
-            <TextBlock
-               x:Name="LoadeerText"/>
-
-        </StackPanel>
-
-
-        <Frame x:Name="CreateInstanceFrame"/>
-
+        </GridView>
     </Grid>
 </Page>

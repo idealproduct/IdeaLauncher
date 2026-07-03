@@ -28,7 +28,7 @@ namespace IdeaLauncher
         public MainWindow()
         {
             InitializeComponent();
-            RootFrame.Navigate(typeof(MainPage));
+            RootFrame.Navigate(typeof(HomePage));
         }
 
         private void InstanceList_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
