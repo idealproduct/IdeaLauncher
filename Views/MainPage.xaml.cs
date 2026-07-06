@@ -95,31 +95,32 @@ namespace IdeaLauncher.Views
 
         private async void InstanceGridView_DoubleTapped(object sender, Microsoft.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
         {
+            //if (sender is GridView gridView && gridView.SelectedItem is InstanceItem selectedItem)
+            //{
+            //    InstanceService.Current.SelectedInstance = selectedItem;
 
-            // 1. 從發送端（GridView）取得目前被選取的項目
+            //    try
+            //    {
+            //        var MinecraftService = new MinecraftService();
+
+            //        await MinecraftService.LaunchMinecraft();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        System.Diagnostics.Debug.WriteLine($"啟動失敗: {ex.Message}");
+            //    }
+            //}
+            //else
+            //{
+            //    System.Diagnostics.Debug.WriteLine("無法啟動：尚未選取任何實例或連點位置不正確。");
+            //}
+
+
             if (sender is GridView gridView && gridView.SelectedItem is InstanceItem selectedItem)
             {
-                // 2. 💡 關鍵：把選中的項目塞給全域服務，這樣 MinecraftService 才讀得到資料！
-                // 如果你的 Service 裡是用 InstanceInfo，記得在這裡做轉換
                 InstanceService.Current.SelectedInstance = selectedItem;
-
-                try
-                {
-                    // 3. 確保 SelectedInstance 不是 null 後，再執行啟動
-                    var MinecraftService = new MinecraftService();
-
-                    await MinecraftService.LaunchMinecraft();
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine($"啟動失敗: {ex.Message}");
-                }
+                this.Frame.Navigate(typeof(InstanceDetailPage));
             }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("⚠️ 無法啟動：尚未選取任何實例或連點位置不正確。");
-            }
-
         }
     }
 }
