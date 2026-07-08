@@ -20,7 +20,6 @@ public sealed partial class InstanceDetailPage : Page
         // Subscribe to the log event when the page is loaded
         MinecraftService.Current.OnLogReceived += MinecraftService_OnLogReceived;
 
-        // 💡 2. 當頁面被解除載入時，記得取消訂閱以免記憶體洩漏
         this.Unloaded += (s, e) => {
             MinecraftService.Current.OnLogReceived -= MinecraftService_OnLogReceived;
         };
