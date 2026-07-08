@@ -15,10 +15,20 @@
             Spacing="5"
             Grid.Column="0">
 
+            <ComboBox
+                x:Name="AccountListBox"
+                PlaceholderText="Choose Account"
+                FontSize="15"
+                ItemsSource="{x:Bind AccountList}"/>
+            
+            <Button
+                Content="Add Account"
+                Click="AddAccount_Click"/>
+
             <Button
                 Content="Instance Manage"
                 Click="InstanceManage_Click"/>
-            
+
             <Button
                 Content="Settings"
                 Click="Setting_Click"/>

@@ -25,6 +25,8 @@ public class MinecraftService
 
     public event Action<string>? OnLogReceived;
 
+    public MSession? CurrentSession { get; set; }
+
     public async Task LaunchMinecraft()
     {
         //避免null導致炸裂
@@ -53,7 +55,7 @@ public class MinecraftService
         var launchOption = new MLaunchOption
         {
             MaximumRamMb = InstanceService.Current.SelectedInstance.RamMB,
-            Session = MSession.CreateOfflineSession("Dev"),
+            Session = CurrentSession ?? MSession.CreateOfflineSession("Dev")
         };
 
         var process = await launcher.BuildProcessAsync(version, launchOption);
