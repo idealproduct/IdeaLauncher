@@ -19,6 +19,7 @@
                 x:Name="AccountListBox"
                 PlaceholderText="Choose Account"
                 FontSize="15"
+                SelectionChanged="AccountListBox_SelectionChanged"
                 ItemsSource="{x:Bind AccountList}"/>
             
             <Button

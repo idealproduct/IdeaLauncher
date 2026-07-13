@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="23.8" version="23.8" Modules="simple" RootPath="." Language="zh_TW" Id="{21997A3B-7AF5-4AA5-9D57-AB2E4DC016DF}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:"/>
+    <ROW Property="ARPCOMMENTS" Value="此 Installer 資料庫包含了安裝 [|ProductName] 所需的邏輯和資料。" ValueLocId="*"/>
+    <ROW Property="Manufacturer" Value="Denzi"/>
+    <ROW Property="ProductCode" Value="1028:{9D81ACEF-E9FE-4B9B-91B6-DD4C7185424A} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="ideaLauncher"/>
+    <ROW Property="ProductVersion" Value="1.0.1" Options="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{03E0EAD7-EC17-4B50-9B12-D714577BD2E5}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1" DirectoryOptions="3"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SideBySideGuidComponent">
+    <ROW Component="APPDIR" Value="{9F8B6971-15F8-4E56-8DC3-88D4C6B8D55B}"/>
+    <ROW Component="ProductInformation" Value="{E5727F3A-5AEA-498F-853B-FB761957B087}"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{9F8B6971-15F8-4E56-8DC3-88D4C6B8D55B}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="App.xbf" ComponentId="{5FEF8F18-4750-4233-A84D-1EBA9E1C0D78}" Directory_="APPDIR" Attributes="0" KeyPath="App.xbf" Type="0"/>
+    <ROW Component="CmlLib.Core.Auth.Microsoft.dll" ComponentId="{15854D57-F3B6-44F3-AC1B-E79180AD6F25}" Directory_="APPDIR" Attributes="0" KeyPath="CmlLib.Core.Auth.Microsoft.dll"/>
+    <ROW Component="CmlLib.Core.Commons.dll" ComponentId="{9730670D-78C1-4050-B13F-A33ACC0BC080}" Directory_="APPDIR" Attributes="0" KeyPath="CmlLib.Core.Commons.dll"/>
+    <ROW Component="CmlLib.Core.dll" ComponentId="{4AE44935-242D-4726-AC15-A4BB344F4B89}" Directory_="APPDIR" Attributes="0" KeyPath="CmlLib.Core.dll"/>
+    <ROW Component="CoreMessagingXP.dll" ComponentId="{7E38FBE4-463D-450F-A61A-699CEE797526}" Directory_="APPDIR" Attributes="256" KeyPath="CoreMessagingXP.dll"/>
+    <ROW Component="DWriteCore.dll" ComponentId="{89912CF8-CB08-4A98-8FA6-AF704CA1C625}" Directory_="APPDIR" Attributes="256" KeyPath="DWriteCore.dll"/>
+    <ROW Component="DwmSceneI.dll" ComponentId="{42686DDA-08FF-4B26-A686-16510691E5D2}" Directory_="APPDIR" Attributes="256" KeyPath="DwmSceneI.dll"/>
+    <ROW Component="ICSharpCode.SharpZipLib.dll" ComponentId="{26B4E57A-A491-4DE4-9668-437B303677BE}" Directory_="APPDIR" Attributes="0" KeyPath="ICSharpCode.SharpZipLib.dll"/>
+    <ROW Component="IdeaLauncher.dll" ComponentId="{D042D572-8A3C-4BD4-914C-11E252AB0DBF}" Directory_="APPDIR" Attributes="256" KeyPath="IdeaLauncher.dll"/>
+    <ROW Component="IdeaLauncher.exe" ComponentId="{DD44B3B4-494A-4065-8B63-60420B3A0A33}" Directory_="APPDIR" Attributes="256" KeyPath="IdeaLauncher.exe"/>
+    <ROW Component="MRM.dll" ComponentId="{B4B7B3A7-24F8-4E1D-B98D-47626BB6B024}" Directory_="APPDIR" Attributes="256" KeyPath="MRM.dll"/>
+    <ROW Component="Microsoft.DirectManipulation.dll" ComponentId="{2D1EBC6B-38AE-4D32-983D-8CDE5A12974C}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.DirectManipulation.dll"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll" ComponentId="{0C39FA51-5330-4518-ABA7-5FBF4B624A00}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.Abstractions.dll" ComponentId="{5E2A7F59-E42D-4F4A-B597-939E9401D833}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW Component="Microsoft.Graphics.Display.dll" ComponentId="{D8DD593E-5461-4551-8A25-F91F278E2AE9}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Graphics.Display.dll"/>
+    <ROW Component="Microsoft.Graphics.Imaging.Projection.dll" ComponentId="{7385A3DB-C881-418B-B780-BB3F4DE5DBBE}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Graphics.Imaging.Projection.dll"/>
+    <ROW Component="Microsoft.Graphics.Imaging.dll" ComponentId="{393E54FC-77D3-4DB7-AC98-653D1D5BE181}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Graphics.Imaging.dll"/>
+    <ROW Component="Microsoft.Identity.Client.Extensions.Msal.dll" ComponentId="{1043F6C7-A4CB-4C37-9E07-9BF83568A888}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Identity.Client.Extensions.Msal.dll"/>
+    <ROW Component="Microsoft.Identity.Client.dll" ComponentId="{55CFF979-B9B1-4EC3-8191-2D2E648AAF6D}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Identity.Client.dll"/>
+    <ROW Component="Microsoft.IdentityModel.Abstractions.dll" ComponentId="{86BBEE0F-7195-477B-808C-31EF7770A72C}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.IdentityModel.Abstractions.dll"/>
+    <ROW Component="Microsoft.InputStateManager.dll" ComponentId="{7177A9A2-1FAF-4D6C-A9CA-9C74DF9302D6}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.InputStateManager.dll"/>
+    <ROW Component="Microsoft.InteractiveExperiences.Projection.dll" ComponentId="{6F4CBC7F-1406-44A6-8C4D-CF9B490188B2}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.InteractiveExperiences.Projection.dll"/>
+    <ROW Component="Microsoft.Internal.FrameworkUdk.dll" ComponentId="{A49493BE-993C-4081-9A43-94060FF44951}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Internal.FrameworkUdk.dll"/>
+    <ROW Component="Microsoft.ML.OnnxRuntime.dll" ComponentId="{9D95B49E-9E22-4227-83C6-1334FA2F995C}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.ML.OnnxRuntime.dll"/>
+    <ROW Component="Microsoft.Security.Authentication.OAuth.Projection.dll" ComponentId="{00E67691-CE67-4E75-AEFD-0D67E7ECD426}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Security.Authentication.OAuth.Projection.dll"/>
+    <ROW Component="Microsoft.UI.Composition.OSSupport.dll" ComponentId="{8D89BED3-C485-4A6C-936D-2A2CD747C442}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Composition.OSSupport.dll"/>
+    <ROW Component="Microsoft.UI.Designer.dll" ComponentId="{CA5B1ADA-82FD-4ADD-AAE8-B20009D00EEE}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Designer.dll"/>
+    <ROW Component="Microsoft.UI.Input.dll" ComponentId="{ADD71FA6-E47B-4722-93B7-2C3B6000869D}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Input.dll"/>
+    <ROW Component="Microsoft.UI.Windowing.Core.dll" ComponentId="{ACEF572A-99BB-48E4-818E-05D4DE44CEBB}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Windowing.Core.dll"/>
+    <ROW Component="Microsoft.UI.Windowing.dll" ComponentId="{4DCE10F3-C164-4082-A4A1-24F4F870B3AD}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Windowing.dll"/>
+    <ROW Component="Microsoft.UI.Xaml.Controls.dll" ComponentId="{187D0D3F-B963-4E4E-A1CD-5A49968D2050}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Xaml.Controls.dll"/>
+    <ROW Component="Microsoft.UI.Xaml.Internal.dll" ComponentId="{78E49662-785B-41BB-9CDF-C80E9A707E8C}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Xaml.Internal.dll"/>
+    <ROW Component="Microsoft.UI.Xaml.Phone.dll" ComponentId="{10F96A44-F02C-4F05-826F-9DD297F6E639}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.Xaml.Phone.dll"/>
+    <ROW Component="Microsoft.UI.dll" ComponentId="{77E4D70F-84D7-49A0-AE9C-61512DCFADDE}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.UI.dll"/>
+    <ROW Component="Microsoft.Web.WebView2.Core.Projection.dll" ComponentId="{E8D17E53-9A55-4FF1-90A5-91ACDF0B5CF3}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Core.Projection.dll"/>
+    <ROW Component="Microsoft.Web.WebView2.Core.dll" ComponentId="{02466BEC-9E5B-4BCA-B15D-8EA17EDB8041}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Web.WebView2.Core.dll"/>
+    <ROW Component="Microsoft.WinUI.dll" ComponentId="{CB4185DB-2651-44FE-94DC-D69CC16D6E2F}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.WinUI.dll"/>
+    <ROW Component="Microsoft.Windows.AI.AICapabilities.dll" ComponentId="{30112A95-395B-4D10-BE22-4D3221778512}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.AI.AICapabilities.dll"/>
+    <ROW Component="Microsoft.Windows.AI.ContentSafety.Projection.dll" ComponentId="{AE892B22-861B-444B-965A-601AF317B3CC}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AI.ContentSafety.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AI.ContentSafety.dll" ComponentId="{629B6EA1-F72C-471E-8436-2BCE3E341A0B}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.AI.ContentSafety.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Foundation.Projection.dll" ComponentId="{0C98F35E-1495-437C-9714-A5BEAE642B24}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AI.Foundation.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Imaging.Projection.dll" ComponentId="{0A0CABB2-12DC-4E85-A33F-A19DBB192E1E}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AI.Imaging.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Imaging.dll" ComponentId="{A9306FFE-10ED-4E63-9461-F3A226A1CC87}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.AI.Imaging.dll"/>
+    <ROW Component="Microsoft.Windows.AI.MachineLearning.Projection.dll" ComponentId="{BAA25F68-971B-48AB-9829-796E650AEFC9}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AI.MachineLearning.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Projection.dll" ComponentId="{F792EE43-466E-483F-96D8-AC9AABD1759C}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AI.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Text.Projection.dll" ComponentId="{09CAA6C0-445A-4D0D-A4C9-FD357DF8FCFC}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AI.Text.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Text.dll" ComponentId="{32CC14D9-988C-4C88-AA31-B913B8742BF4}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.AI.Text.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Video.Projection.dll" ComponentId="{49CAC547-9F42-420E-854D-77FCE1DC88B5}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AI.Video.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AI.Video.dll" ComponentId="{AD93C93C-FC95-4EFD-AF24-AFA3AFB8BFF3}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.AI.Video.dll"/>
+    <ROW Component="Microsoft.Windows.AppLifecycle.Projection.dll" ComponentId="{F2B55061-83FE-4CFA-A7B7-3E1BA8587259}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AppLifecycle.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AppNotifications.Builder.Projection.dll" ComponentId="{2B113888-6DBB-4FC7-A071-6FC815A611BC}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AppNotifications.Builder.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AppNotifications.Projection.dll" ComponentId="{7869B668-E0F8-43AF-8085-D3AA55854DE3}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.AppNotifications.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.Background.Projection.dll" ComponentId="{2B4AF547-29E1-43AB-91E6-F5A4DF7AFDCD}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.Background.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll" ComponentId="{9EE141BC-C620-4A7C-9848-A5DD4DEEE529}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.Resources.dll" ComponentId="{EE30D852-82A5-41FB-9CDA-164C8BA57AA0}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.ApplicationModel.Resources.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll" ComponentId="{0FA8C685-7206-4A29-81DA-42632184ACB9}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel_7_.Resources.Projection.dll" ComponentId="{993C3996-2061-4506-99FD-27A6E497C0D7}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.Resources.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.BadgeNotifications.Projection.dll" ComponentId="{8BBDBE58-4B57-49B4-A392-015E8F0B28B4}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.BadgeNotifications.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Foundation.Projection.dll" ComponentId="{220527B3-EBBF-4675-9E23-4BC443E930EE}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.Foundation.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Management.Deployment.Projection.dll" ComponentId="{674A2101-47FB-4D3A-ACBE-F444A3037AD3}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.Management.Deployment.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Media.Capture.Projection.dll" ComponentId="{1505F311-B6E9-4D1C-B6CD-BBFD79062371}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.Media.Capture.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.PushNotifications.Projection.dll" ComponentId="{8003C386-3A15-496B-B68D-F80B2BEA6AEF}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.PushNotifications.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.SDK.NET.dll" ComponentId="{B28721E0-C632-4FE2-97DB-41F914193611}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.SDK.NET.dll"/>
+    <ROW Component="Microsoft.Windows.Security.AccessControl.Projection.dll" ComponentId="{6E9F6C0C-BE78-478B-8F8D-E9E94B7E6121}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.Security.AccessControl.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Storage.Pickers.Projection.dll" ComponentId="{387578F3-0B62-4719-A2BA-9F5696E2A182}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.Storage.Pickers.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Storage.Projection.dll" ComponentId="{5DE38407-0DF0-40D3-BD5D-7FDEDD59FB6A}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.Storage.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.System.Power.Projection.dll" ComponentId="{973DB790-8651-48C4-83DE-107D141A8CDB}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.System.Power.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.System.Projection.dll" ComponentId="{7977F50A-78BA-411E-9E49-3AB637A5251F}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.System.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Widgets.Projection.dll" ComponentId="{0B3568C5-08D8-44AA-893A-BA08545620BB}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.Widgets.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Widgets.dll" ComponentId="{401F9663-A69A-4E42-9B40-8CF983AAB521}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.Widgets.dll"/>
+    <ROW Component="Microsoft.Windows.Workloads.Resources.dll" ComponentId="{1FDB2C6C-CF92-4979-9F1C-188925138DB0}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.Workloads.Resources.dll"/>
+    <ROW Component="Microsoft.Windows.Workloads.Resources_ec.dll" ComponentId="{2FA11420-841B-4B67-A3A4-0CF7A0A45A23}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.Workloads.Resources_ec.dll"/>
+    <ROW Component="Microsoft.Windows.Workloads.dll" ComponentId="{61304857-DDAA-49DA-8E75-B340F72F9419}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.Workloads.dll"/>
+    <ROW Component="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll" ComponentId="{4F1A76F5-40F4-4412-8D81-0247236B8971}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll"/>
+    <ROW Component="Microsoft.WindowsAppRuntime.dll" ComponentId="{A883219F-E9CA-47BE-8C20-4C0290C4025D}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.WindowsAppRuntime.dll"/>
+    <ROW Component="Microsoft.ui.xaml.dll" ComponentId="{986231AF-5508-436F-BB55-C0416B9DC429}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.ui.xaml.dll"/>
+    <ROW Component="Microsoft.ui.xaml.resources.19h1.dll" ComponentId="{C6B8F4DC-02AB-48AE-A0F7-4B2EB5E34D7B}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.ui.xaml.resources.19h1.dll"/>
+    <ROW Component="Microsoft.ui.xaml.resources.common.dll" ComponentId="{FD834213-C2AE-4ABB-B1F4-D0AC48FD2481}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.ui.xaml.resources.common.dll"/>
+    <ROW Component="NPUDetect.dll" ComponentId="{F0389B9E-07DA-41D4-AEB0-8BE20C49B401}" Directory_="APPDIR" Attributes="256" KeyPath="NPUDetect.dll"/>
+    <ROW Component="PerceptiveStreaming.dll" ComponentId="{90B550AA-A9A3-4793-9086-D84DDB55C1DB}" Directory_="APPDIR" Attributes="256" KeyPath="PerceptiveStreaming.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{E5727F3A-5AEA-498F-853B-FB761957B087}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="PushNotificationsLongRunningTask.ProxyStub.dll" ComponentId="{712D53E7-AA35-4C73-85AD-FBD9B7374948}" Directory_="APPDIR" Attributes="256" KeyPath="PushNotificationsLongRunningTask.ProxyStub.dll"/>
+    <ROW Component="RestartAgent.exe" ComponentId="{B2B869CB-E299-4897-8157-69CB6D225DB1}" Directory_="APPDIR" Attributes="256" KeyPath="RestartAgent.exe"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{07413E60-B3F5-452E-AB0C-0EBCD5BCA3EA}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SessionHandleIPCProxyStub.dll" ComponentId="{037AA15D-ADDC-4AC8-A467-669017E53E7C}" Directory_="APPDIR" Attributes="256" KeyPath="SessionHandleIPCProxyStub.dll"/>
+    <ROW Component="SevenZip.dll" ComponentId="{FC1F9755-FA4F-480C-9A15-BA9B2489018B}" Directory_="APPDIR" Attributes="0" KeyPath="SevenZip.dll"/>
+    <ROW Component="System.Numerics.Tensors.dll" ComponentId="{CFEB6427-5562-4281-B452-2D48517AAA8C}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Tensors.dll"/>
+    <ROW Component="WinRT.Runtime.dll" ComponentId="{25864DCD-14DC-4273-A2CE-16310651E7C1}" Directory_="APPDIR" Attributes="0" KeyPath="WinRT.Runtime.dll"/>
+    <ROW Component="WinUIEdit.dll" ComponentId="{DCDAB196-4DD0-455E-8068-0F4B450D65E1}" Directory_="APPDIR" Attributes="256" KeyPath="WinUIEdit.dll"/>
+    <ROW Component="XboxAuthNet.Game.Msal.dll" ComponentId="{9EF473E0-9745-4A4D-A0F5-AD57952B37DA}" Directory_="APPDIR" Attributes="0" KeyPath="XboxAuthNet.Game.Msal.dll"/>
+    <ROW Component="XboxAuthNet.Game.dll" ComponentId="{BE8540E3-63E5-423F-B708-D5964055C899}" Directory_="APPDIR" Attributes="0" KeyPath="XboxAuthNet.Game.dll"/>
+    <ROW Component="XboxAuthNet.dll" ComponentId="{E6B54760-E1CE-4348-A688-FAE3CB5B5C17}" Directory_="APPDIR" Attributes="0" KeyPath="XboxAuthNet.dll"/>
+    <ROW Component="dcompi.dll" ComponentId="{CF4E4AA4-C5F4-4099-BCFE-97D1ED584838}" Directory_="APPDIR" Attributes="256" KeyPath="dcompi.dll"/>
+    <ROW Component="dwmcorei.dll" ComponentId="{2F983338-0918-41DA-BC42-432F7B37CCAB}" Directory_="APPDIR" Attributes="256" KeyPath="dwmcorei.dll"/>
+    <ROW Component="marshal.dll" ComponentId="{11382A2A-8BC2-4954-B1C6-2EE1A0F80656}" Directory_="APPDIR" Attributes="256" KeyPath="marshal.dll"/>
+    <ROW Component="wuceffectsi.dll" ComponentId="{C1054778-BC78-4627-B557-066C94F861E0}" Directory_="APPDIR" Attributes="256" KeyPath="wuceffectsi.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="App.xbf" Component_="App.xbf" FileName="App.xbf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\App.xbf" SelfReg="false"/>
+    <ROW File="CmlLib.Core.Auth.Microsoft.dll" Component_="CmlLib.Core.Auth.Microsoft.dll" FileName="CMLLIB~1.DLL|CmlLib.Core.Auth.Microsoft.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\CmlLib.Core.Auth.Microsoft.dll" SelfReg="false"/>
+    <ROW File="CmlLib.Core.Commons.dll" Component_="CmlLib.Core.Commons.dll" FileName="CMLLIB~2.DLL|CmlLib.Core.Commons.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\CmlLib.Core.Commons.dll" SelfReg="false"/>
+    <ROW File="CmlLib.Core.dll" Component_="CmlLib.Core.dll" FileName="CMLLIB~3.DLL|CmlLib.Core.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\CmlLib.Core.dll" SelfReg="false"/>
+    <ROW File="CoreMessagingXP.dll" Component_="CoreMessagingXP.dll" FileName="COREME~1.DLL|CoreMessagingXP.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\CoreMessagingXP.dll" SelfReg="false"/>
+    <ROW File="dcompi.dll" Component_="dcompi.dll" FileName="dcompi.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\dcompi.dll" SelfReg="false"/>
+    <ROW File="dwmcorei.dll" Component_="dwmcorei.dll" FileName="dwmcorei.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\dwmcorei.dll" SelfReg="false"/>
+    <ROW File="DwmSceneI.dll" Component_="DwmSceneI.dll" FileName="DWMSCE~1.DLL|DwmSceneI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\DwmSceneI.dll" SelfReg="false"/>
+    <ROW File="DWriteCore.dll" Component_="DWriteCore.dll" FileName="DWRITE~1.DLL|DWriteCore.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\DWriteCore.dll" SelfReg="false"/>
+    <ROW File="ICSharpCode.SharpZipLib.dll" Component_="ICSharpCode.SharpZipLib.dll" FileName="ICSHAR~1.DLL|ICSharpCode.SharpZipLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\ICSharpCode.SharpZipLib.dll" SelfReg="false"/>
+    <ROW File="IdeaLauncher.deps.json" Component_="App.xbf" FileName="IDEALA~1.JSO|IdeaLauncher.deps.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\IdeaLauncher.deps.json" SelfReg="false"/>
+    <ROW File="IdeaLauncher.dll" Component_="IdeaLauncher.dll" FileName="IDEALA~1.DLL|IdeaLauncher.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\IdeaLauncher.dll" SelfReg="false"/>
+    <ROW File="IdeaLauncher.exe" Component_="IdeaLauncher.exe" FileName="IDEALA~1.EXE|IdeaLauncher.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\IdeaLauncher.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="IdeaLauncher.pdb" Component_="IdeaLauncher.exe" FileName="IDEALA~1.PDB|IdeaLauncher.pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\IdeaLauncher.pdb" SelfReg="false"/>
+    <ROW File="IdeaLauncher.pri" Component_="App.xbf" FileName="IDEALA~1.PRI|IdeaLauncher.pri" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\IdeaLauncher.pri" SelfReg="false"/>
+    <ROW File="IdeaLauncher.runtimeconfig.json" Component_="App.xbf" FileName="IDEALA~2.JSO|IdeaLauncher.runtimeconfig.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\IdeaLauncher.runtimeconfig.json" SelfReg="false"/>
+    <ROW File="MainWindow.xbf" Component_="App.xbf" FileName="MAINWI~1.XBF|MainWindow.xbf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\MainWindow.xbf" SelfReg="false"/>
+    <ROW File="marshal.dll" Component_="marshal.dll" FileName="marshal.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\marshal.dll" SelfReg="false"/>
+    <ROW File="Microsoft.DirectManipulation.dll" Component_="Microsoft.DirectManipulation.dll" FileName="MICROS~1.DLL|Microsoft.DirectManipulation.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.DirectManipulation.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.dll" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll" FileName="MICROS~2.DLL|Microsoft.Extensions.DependencyInjection.Abstractions.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Extensions.Logging.Abstractions.dll" Component_="Microsoft.Extensions.Logging.Abstractions.dll" FileName="MICROS~3.DLL|Microsoft.Extensions.Logging.Abstractions.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Extensions.Logging.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Foundation.winmd" Component_="App.xbf" FileName="MICROS~1.WIN|Microsoft.Foundation.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Foundation.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.Display.dll" Component_="Microsoft.Graphics.Display.dll" FileName="MICROS~4.DLL|Microsoft.Graphics.Display.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.Display.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.Imaging.dll" Component_="Microsoft.Graphics.Imaging.dll" FileName="MICROS~5.DLL|Microsoft.Graphics.Imaging.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.Imaging.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.Imaging.Projection.dll" Component_="Microsoft.Graphics.Imaging.Projection.dll" FileName="MICROS~6.DLL|Microsoft.Graphics.Imaging.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.Imaging.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.Imaging.winmd" Component_="App.xbf" FileName="MICROS~2.WIN|Microsoft.Graphics.Imaging.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.Imaging.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.ImagingInternal.ImageObjectRemover.winmd" Component_="App.xbf" FileName="MICROS~3.WIN|Microsoft.Graphics.ImagingInternal.ImageObjectRemover.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.ImagingInternal.ImageObjectRemover.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.ImagingInternal.winmd" Component_="App.xbf" FileName="MICROS~4.WIN|Microsoft.Graphics.ImagingInternal.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.ImagingInternal.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.Internal.Imaging.winmd" Component_="App.xbf" FileName="MICROS~5.WIN|Microsoft.Graphics.Internal.Imaging.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.Internal.Imaging.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Graphics.winmd" Component_="App.xbf" FileName="MICROS~6.WIN|Microsoft.Graphics.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Graphics.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Identity.Client.dll" Component_="Microsoft.Identity.Client.dll" FileName="MICROS~7.DLL|Microsoft.Identity.Client.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Identity.Client.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Identity.Client.Extensions.Msal.dll" Component_="Microsoft.Identity.Client.Extensions.Msal.dll" FileName="MICROS~8.DLL|Microsoft.Identity.Client.Extensions.Msal.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Identity.Client.Extensions.Msal.dll" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Abstractions.dll" Component_="Microsoft.IdentityModel.Abstractions.dll" FileName="MICROS~9.DLL|Microsoft.IdentityModel.Abstractions.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.IdentityModel.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.InputStateManager.dll" Component_="Microsoft.InputStateManager.dll" FileName="MICRO~10.DLL|Microsoft.InputStateManager.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.InputStateManager.dll" SelfReg="false"/>
+    <ROW File="Microsoft.InteractiveExperiences.Projection.dll" Component_="Microsoft.InteractiveExperiences.Projection.dll" FileName="MICRO~11.DLL|Microsoft.InteractiveExperiences.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.InteractiveExperiences.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Internal.FrameworkUdk.dll" Component_="Microsoft.Internal.FrameworkUdk.dll" FileName="MICRO~12.DLL|Microsoft.Internal.FrameworkUdk.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Internal.FrameworkUdk.dll" SelfReg="false"/>
+    <ROW File="Microsoft.ML.OnnxRuntime.dll" Component_="Microsoft.ML.OnnxRuntime.dll" FileName="MICRO~13.DLL|Microsoft.ML.OnnxRuntime.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.ML.OnnxRuntime.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Security.Authentication.OAuth.Projection.dll" Component_="Microsoft.Security.Authentication.OAuth.Projection.dll" FileName="MICRO~14.DLL|Microsoft.Security.Authentication.OAuth.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Security.Authentication.OAuth.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Security.Authentication.OAuth.winmd" Component_="App.xbf" FileName="MICROS~7.WIN|Microsoft.Security.Authentication.OAuth.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Security.Authentication.OAuth.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Composition.OSSupport.dll" Component_="Microsoft.UI.Composition.OSSupport.dll" FileName="MICRO~15.DLL|Microsoft.UI.Composition.OSSupport.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Composition.OSSupport.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Designer.dll" Component_="Microsoft.UI.Designer.dll" FileName="MICRO~16.DLL|Microsoft.UI.Designer.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Designer.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.dll" Component_="Microsoft.UI.dll" FileName="MICRO~17.DLL|Microsoft.UI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Input.dll" Component_="Microsoft.UI.Input.dll" FileName="MICRO~18.DLL|Microsoft.UI.Input.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Input.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.pri" Component_="App.xbf" FileName="MICROS~1.PRI|Microsoft.UI.pri" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.pri" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Text.winmd" Component_="App.xbf" FileName="MICROS~8.WIN|Microsoft.UI.Text.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Text.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Windowing.Core.dll" Component_="Microsoft.UI.Windowing.Core.dll" FileName="MICRO~19.DLL|Microsoft.UI.Windowing.Core.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Windowing.Core.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Windowing.dll" Component_="Microsoft.UI.Windowing.dll" FileName="MICRO~20.DLL|Microsoft.UI.Windowing.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Windowing.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.winmd" Component_="App.xbf" FileName="MICROS~9.WIN|Microsoft.UI.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Xaml.Controls.dll" Component_="Microsoft.UI.Xaml.Controls.dll" FileName="MICRO~21.DLL|Microsoft.UI.Xaml.Controls.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Xaml.Controls.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Xaml.Controls.pri" Component_="App.xbf" FileName="MICROS~2.PRI|Microsoft.UI.Xaml.Controls.pri" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Xaml.Controls.pri" SelfReg="false"/>
+    <ROW File="Microsoft.ui.xaml.dll" Component_="Microsoft.ui.xaml.dll" FileName="MICRO~22.DLL|Microsoft.ui.xaml.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.ui.xaml.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Xaml.Internal.dll" Component_="Microsoft.UI.Xaml.Internal.dll" FileName="MICRO~23.DLL|Microsoft.UI.Xaml.Internal.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Xaml.Internal.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Xaml.Phone.dll" Component_="Microsoft.UI.Xaml.Phone.dll" FileName="MICRO~24.DLL|Microsoft.UI.Xaml.Phone.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Xaml.Phone.dll" SelfReg="false"/>
+    <ROW File="Microsoft.ui.xaml.resources.19h1.dll" Component_="Microsoft.ui.xaml.resources.19h1.dll" FileName="MICRO~25.DLL|Microsoft.ui.xaml.resources.19h1.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.ui.xaml.resources.19h1.dll" SelfReg="false"/>
+    <ROW File="Microsoft.ui.xaml.resources.common.dll" Component_="Microsoft.ui.xaml.resources.common.dll" FileName="MICRO~26.DLL|Microsoft.ui.xaml.resources.common.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.ui.xaml.resources.common.dll" SelfReg="false"/>
+    <ROW File="Microsoft.UI.Xaml.winmd" Component_="App.xbf" FileName="MICRO~10.WIN|Microsoft.UI.Xaml.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.UI.Xaml.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Core.dll" Component_="Microsoft.Web.WebView2.Core.dll" FileName="MICRO~27.DLL|Microsoft.Web.WebView2.Core.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Web.WebView2.Core.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Core.Projection.dll" Component_="Microsoft.Web.WebView2.Core.Projection.dll" FileName="MICRO~28.DLL|Microsoft.Web.WebView2.Core.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Web.WebView2.Core.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.AICapabilities.dll" Component_="Microsoft.Windows.AI.AICapabilities.dll" FileName="MICRO~29.DLL|Microsoft.Windows.AI.AICapabilities.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.AICapabilities.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.ContentModerationInternal.winmd" Component_="App.xbf" FileName="MICRO~11.WIN|Microsoft.Windows.AI.ContentModerationInternal.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.ContentModerationInternal.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.ContentSafety.dll" Component_="Microsoft.Windows.AI.ContentSafety.dll" FileName="MICRO~30.DLL|Microsoft.Windows.AI.ContentSafety.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.ContentSafety.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.ContentSafety.Projection.dll" Component_="Microsoft.Windows.AI.ContentSafety.Projection.dll" FileName="MICRO~31.DLL|Microsoft.Windows.AI.ContentSafety.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.ContentSafety.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.ContentSafety.winmd" Component_="App.xbf" FileName="MICRO~12.WIN|Microsoft.Windows.AI.ContentSafety.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.ContentSafety.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Foundation.Projection.dll" Component_="Microsoft.Windows.AI.Foundation.Projection.dll" FileName="MICRO~32.DLL|Microsoft.Windows.AI.Foundation.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Foundation.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Foundation.winmd" Component_="App.xbf" FileName="MICRO~13.WIN|Microsoft.Windows.AI.Foundation.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Foundation.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.FoundationInternal.winmd" Component_="App.xbf" FileName="MICRO~14.WIN|Microsoft.Windows.AI.FoundationInternal.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.FoundationInternal.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.GenerativeInternal.winmd" Component_="App.xbf" FileName="MICRO~15.WIN|Microsoft.Windows.AI.GenerativeInternal.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.GenerativeInternal.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Imaging.dll" Component_="Microsoft.Windows.AI.Imaging.dll" FileName="MICRO~33.DLL|Microsoft.Windows.AI.Imaging.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Imaging.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Imaging.Projection.dll" Component_="Microsoft.Windows.AI.Imaging.Projection.dll" FileName="MICRO~34.DLL|Microsoft.Windows.AI.Imaging.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Imaging.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Imaging.winmd" Component_="App.xbf" FileName="MICRO~16.WIN|Microsoft.Windows.AI.Imaging.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Imaging.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.MachineLearning.Projection.dll" Component_="Microsoft.Windows.AI.MachineLearning.Projection.dll" FileName="MICRO~35.DLL|Microsoft.Windows.AI.MachineLearning.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.MachineLearning.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Projection.dll" Component_="Microsoft.Windows.AI.Projection.dll" FileName="MICRO~36.DLL|Microsoft.Windows.AI.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Text.dll" Component_="Microsoft.Windows.AI.Text.dll" FileName="MICRO~37.DLL|Microsoft.Windows.AI.Text.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Text.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Text.Projection.dll" Component_="Microsoft.Windows.AI.Text.Projection.dll" FileName="MICRO~38.DLL|Microsoft.Windows.AI.Text.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Text.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Text.winmd" Component_="App.xbf" FileName="MICRO~17.WIN|Microsoft.Windows.AI.Text.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Text.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Video.dll" Component_="Microsoft.Windows.AI.Video.dll" FileName="MICRO~39.DLL|Microsoft.Windows.AI.Video.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Video.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Video.Projection.dll" Component_="Microsoft.Windows.AI.Video.Projection.dll" FileName="MICRO~40.DLL|Microsoft.Windows.AI.Video.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Video.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.Video.winmd" Component_="App.xbf" FileName="MICRO~18.WIN|Microsoft.Windows.AI.Video.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.Video.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AI.winmd" Component_="App.xbf" FileName="MICRO~19.WIN|Microsoft.Windows.AI.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AI.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.Background.Projection.dll" Component_="Microsoft.Windows.ApplicationModel.Background.Projection.dll" FileName="MICRO~41.DLL|Microsoft.Windows.ApplicationModel.Background.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.Background.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.winmd" Component_="App.xbf" FileName="MICRO~20.WIN|Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.Background.winmd" Component_="App.xbf" FileName="MICRO~21.WIN|Microsoft.Windows.ApplicationModel.Background.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.Background.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll" Component_="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll" FileName="MICRO~42.DLL|Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.DynamicDependency.winmd" Component_="App.xbf" FileName="MICRO~22.WIN|Microsoft.Windows.ApplicationModel.DynamicDependency.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.DynamicDependency.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.Resources.dll" Component_="Microsoft.Windows.ApplicationModel.Resources.dll" FileName="MICRO~43.DLL|Microsoft.Windows.ApplicationModel.Resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.Resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.Resources.Projection.dll" Component_="Microsoft.Windows.ApplicationModel_7_.Resources.Projection.dll" FileName="MICRO~44.DLL|Microsoft.Windows.ApplicationModel.Resources.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.Resources.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.Resources.winmd" Component_="App.xbf" FileName="MICRO~23.WIN|Microsoft.Windows.ApplicationModel.Resources.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.Resources.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll" Component_="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll" FileName="MICRO~45.DLL|Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.winmd" Component_="App.xbf" FileName="MICRO~24.WIN|Microsoft.Windows.ApplicationModel.WindowsAppRuntime.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AppLifecycle.Projection.dll" Component_="Microsoft.Windows.AppLifecycle.Projection.dll" FileName="MICRO~46.DLL|Microsoft.Windows.AppLifecycle.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AppLifecycle.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AppLifecycle.winmd" Component_="App.xbf" FileName="MICRO~25.WIN|Microsoft.Windows.AppLifecycle.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AppLifecycle.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AppNotifications.Builder.Projection.dll" Component_="Microsoft.Windows.AppNotifications.Builder.Projection.dll" FileName="MICRO~47.DLL|Microsoft.Windows.AppNotifications.Builder.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AppNotifications.Builder.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AppNotifications.Builder.winmd" Component_="App.xbf" FileName="MICRO~26.WIN|Microsoft.Windows.AppNotifications.Builder.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AppNotifications.Builder.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AppNotifications.Projection.dll" Component_="Microsoft.Windows.AppNotifications.Projection.dll" FileName="MICRO~48.DLL|Microsoft.Windows.AppNotifications.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AppNotifications.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.AppNotifications.winmd" Component_="App.xbf" FileName="MICRO~27.WIN|Microsoft.Windows.AppNotifications.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.AppNotifications.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.BadgeNotifications.Projection.dll" Component_="Microsoft.Windows.BadgeNotifications.Projection.dll" FileName="MICRO~49.DLL|Microsoft.Windows.BadgeNotifications.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.BadgeNotifications.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.BadgeNotifications.winmd" Component_="App.xbf" FileName="MICRO~28.WIN|Microsoft.Windows.BadgeNotifications.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.BadgeNotifications.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Foundation.Projection.dll" Component_="Microsoft.Windows.Foundation.Projection.dll" FileName="MICRO~50.DLL|Microsoft.Windows.Foundation.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Foundation.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Foundation.winmd" Component_="App.xbf" FileName="MICRO~29.WIN|Microsoft.Windows.Foundation.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Foundation.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Globalization.winmd" Component_="App.xbf" FileName="MICRO~30.WIN|Microsoft.Windows.Globalization.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Globalization.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.ImageCreationInternal.winmd" Component_="App.xbf" FileName="MICRO~31.WIN|Microsoft.Windows.ImageCreationInternal.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.ImageCreationInternal.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Internal.AI.ContentModeration.winmd" Component_="App.xbf" FileName="MICRO~32.WIN|Microsoft.Windows.Internal.AI.ContentModeration.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Internal.AI.ContentModeration.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Internal.AI.Generative.winmd" Component_="App.xbf" FileName="MICRO~33.WIN|Microsoft.Windows.Internal.AI.Generative.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Internal.AI.Generative.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Internal.ImageCreation.winmd" Component_="App.xbf" FileName="MICRO~34.WIN|Microsoft.Windows.Internal.ImageCreation.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Internal.ImageCreation.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Internal.SemanticSearch.winmd" Component_="App.xbf" FileName="MICRO~35.WIN|Microsoft.Windows.Internal.SemanticSearch.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Internal.SemanticSearch.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Internal.Vision.winmd" Component_="App.xbf" FileName="MICRO~36.WIN|Microsoft.Windows.Internal.Vision.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Internal.Vision.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Management.Deployment.Projection.dll" Component_="Microsoft.Windows.Management.Deployment.Projection.dll" FileName="MICRO~51.DLL|Microsoft.Windows.Management.Deployment.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Management.Deployment.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Management.Deployment.winmd" Component_="App.xbf" FileName="MICRO~37.WIN|Microsoft.Windows.Management.Deployment.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Management.Deployment.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Media.Capture.Projection.dll" Component_="Microsoft.Windows.Media.Capture.Projection.dll" FileName="MICRO~52.DLL|Microsoft.Windows.Media.Capture.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Media.Capture.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Media.Capture.winmd" Component_="App.xbf" FileName="MICRO~38.WIN|Microsoft.Windows.Media.Capture.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Media.Capture.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Private.Workloads.SessionManager.winmd" Component_="App.xbf" FileName="MICRO~39.WIN|Microsoft.Windows.Private.Workloads.SessionManager.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Private.Workloads.SessionManager.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.PrivateCommon.winmd" Component_="App.xbf" FileName="MICRO~40.WIN|Microsoft.Windows.PrivateCommon.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.PrivateCommon.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.PushNotifications.Projection.dll" Component_="Microsoft.Windows.PushNotifications.Projection.dll" FileName="MICRO~53.DLL|Microsoft.Windows.PushNotifications.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.PushNotifications.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.PushNotifications.winmd" Component_="App.xbf" FileName="MICRO~41.WIN|Microsoft.Windows.PushNotifications.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.PushNotifications.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.SDK.NET.dll" Component_="Microsoft.Windows.SDK.NET.dll" FileName="MICRO~54.DLL|Microsoft.Windows.SDK.NET.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.SDK.NET.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Security.AccessControl.Projection.dll" Component_="Microsoft.Windows.Security.AccessControl.Projection.dll" FileName="MICRO~55.DLL|Microsoft.Windows.Security.AccessControl.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Security.AccessControl.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Security.AccessControl.winmd" Component_="App.xbf" FileName="MICRO~42.WIN|Microsoft.Windows.Security.AccessControl.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Security.AccessControl.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.SemanticSearch.winmd" Component_="App.xbf" FileName="MICRO~43.WIN|Microsoft.Windows.SemanticSearch.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.SemanticSearch.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.SemanticSearchInternal.winmd" Component_="App.xbf" FileName="MICRO~44.WIN|Microsoft.Windows.SemanticSearchInternal.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.SemanticSearchInternal.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Storage.Pickers.Projection.dll" Component_="Microsoft.Windows.Storage.Pickers.Projection.dll" FileName="MICRO~56.DLL|Microsoft.Windows.Storage.Pickers.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Storage.Pickers.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Storage.Pickers.winmd" Component_="App.xbf" FileName="MICRO~45.WIN|Microsoft.Windows.Storage.Pickers.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Storage.Pickers.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Storage.Projection.dll" Component_="Microsoft.Windows.Storage.Projection.dll" FileName="MICRO~57.DLL|Microsoft.Windows.Storage.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Storage.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Storage.winmd" Component_="App.xbf" FileName="MICRO~46.WIN|Microsoft.Windows.Storage.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Storage.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.System.Power.Projection.dll" Component_="Microsoft.Windows.System.Power.Projection.dll" FileName="MICRO~58.DLL|Microsoft.Windows.System.Power.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.System.Power.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.System.Power.winmd" Component_="App.xbf" FileName="MICRO~47.WIN|Microsoft.Windows.System.Power.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.System.Power.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.System.Projection.dll" Component_="Microsoft.Windows.System.Projection.dll" FileName="MICRO~59.DLL|Microsoft.Windows.System.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.System.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.System.winmd" Component_="App.xbf" FileName="MICRO~48.WIN|Microsoft.Windows.System.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.System.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Vision.winmd" Component_="App.xbf" FileName="MICRO~49.WIN|Microsoft.Windows.Vision.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Vision.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.VisionInternal.winmd" Component_="App.xbf" FileName="MICRO~50.WIN|Microsoft.Windows.VisionInternal.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.VisionInternal.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Widgets.dll" Component_="Microsoft.Windows.Widgets.dll" FileName="MICRO~60.DLL|Microsoft.Windows.Widgets.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Widgets.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Widgets.Projection.dll" Component_="Microsoft.Windows.Widgets.Projection.dll" FileName="MICRO~61.DLL|Microsoft.Windows.Widgets.Projection.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Widgets.Projection.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Widgets.winmd" Component_="App.xbf" FileName="MICRO~51.WIN|Microsoft.Windows.Widgets.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Widgets.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Workloads.dll" Component_="Microsoft.Windows.Workloads.dll" FileName="MICRO~62.DLL|Microsoft.Windows.Workloads.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Workloads.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Workloads.pri" Component_="App.xbf" FileName="MICROS~3.PRI|Microsoft.Windows.Workloads.pri" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Workloads.pri" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Workloads.Resources.dll" Component_="Microsoft.Windows.Workloads.Resources.dll" FileName="MICRO~63.DLL|Microsoft.Windows.Workloads.Resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Workloads.Resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Workloads.Resources_ec.dll" Component_="Microsoft.Windows.Workloads.Resources_ec.dll" FileName="MICRO~64.DLL|Microsoft.Windows.Workloads.Resources_ec.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Workloads.Resources_ec.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Windows.Workloads.winmd" Component_="App.xbf" FileName="MICRO~52.WIN|Microsoft.Windows.Workloads.winmd" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.Windows.Workloads.winmd" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll" Component_="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll" FileName="MICRO~65.DLL|Microsoft.WindowsAppRuntime.Bootstrap.Net.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAppRuntime.dll" Component_="Microsoft.WindowsAppRuntime.dll" FileName="MICRO~66.DLL|Microsoft.WindowsAppRuntime.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.WindowsAppRuntime.dll" SelfReg="false"/>
+    <ROW File="Microsoft.WindowsAppRuntime.pri" Component_="App.xbf" FileName="MICROS~4.PRI|Microsoft.WindowsAppRuntime.pri" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.WindowsAppRuntime.pri" SelfReg="false"/>
+    <ROW File="Microsoft.WinUI.dll" Component_="Microsoft.WinUI.dll" FileName="MICRO~67.DLL|Microsoft.WinUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\Microsoft.WinUI.dll" SelfReg="false"/>
+    <ROW File="MRM.dll" Component_="MRM.dll" FileName="MRM.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\MRM.dll" SelfReg="false"/>
+    <ROW File="NPUDetect.dll" Component_="NPUDetect.dll" FileName="NPUDET~1.DLL|NPUDetect.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\NPUDetect.dll" SelfReg="false"/>
+    <ROW File="PerceptiveStreaming.dll" Component_="PerceptiveStreaming.dll" FileName="PERCEP~1.DLL|PerceptiveStreaming.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\PerceptiveStreaming.dll" SelfReg="false"/>
+    <ROW File="PushNotificationsLongRunningTask.ProxyStub.dll" Component_="PushNotificationsLongRunningTask.ProxyStub.dll" FileName="PUSHNO~1.DLL|PushNotificationsLongRunningTask.ProxyStub.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\PushNotificationsLongRunningTask.ProxyStub.dll" SelfReg="false"/>
+    <ROW File="RestartAgent.exe" Component_="RestartAgent.exe" FileName="RESTAR~1.EXE|RestartAgent.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\RestartAgent.exe" SelfReg="false"/>
+    <ROW File="SessionHandleIPCProxyStub.dll" Component_="SessionHandleIPCProxyStub.dll" FileName="SESSIO~1.DLL|SessionHandleIPCProxyStub.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\SessionHandleIPCProxyStub.dll" SelfReg="false"/>
+    <ROW File="SevenZip.dll" Component_="SevenZip.dll" FileName="SevenZip.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\SevenZip.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Tensors.dll" Component_="System.Numerics.Tensors.dll" FileName="SYSTEM~1.DLL|System.Numerics.Tensors.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\System.Numerics.Tensors.dll" SelfReg="false"/>
+    <ROW File="WinRT.Runtime.dll" Component_="WinRT.Runtime.dll" FileName="WINRTR~1.DLL|WinRT.Runtime.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\WinRT.Runtime.dll" SelfReg="false"/>
+    <ROW File="WinUIEdit.dll" Component_="WinUIEdit.dll" FileName="WINUIE~1.DLL|WinUIEdit.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\WinUIEdit.dll" SelfReg="false"/>
+    <ROW File="workloads.365.json" Component_="App.xbf" FileName="WORKLO~1.JSO|workloads.365.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\workloads.365.json" SelfReg="false"/>
+    <ROW File="workloads.j32.json" Component_="App.xbf" FileName="WORKLO~2.JSO|workloads.j32.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\workloads.j32.json" SelfReg="false"/>
+    <ROW File="workloads.json" Component_="App.xbf" FileName="WORKLO~3.JSO|workloads.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\workloads.json" SelfReg="false"/>
+    <ROW File="workloads.lnl.json" Component_="App.xbf" FileName="WORKLO~4.JSO|workloads.lnl.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\workloads.lnl.json" SelfReg="false"/>
+    <ROW File="workloads.qnn.json" Component_="App.xbf" FileName="WORKLO~5.JSO|workloads.qnn.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\workloads.qnn.json" SelfReg="false"/>
+    <ROW File="workloads.stx.json" Component_="App.xbf" FileName="WORKLO~6.JSO|workloads.stx.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\workloads.stx.json" SelfReg="false"/>
+    <ROW File="wuceffectsi.dll" Component_="wuceffectsi.dll" FileName="WUCEFF~1.DLL|wuceffectsi.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\wuceffectsi.dll" SelfReg="false"/>
+    <ROW File="XboxAuthNet.dll" Component_="XboxAuthNet.dll" FileName="XBOXAU~1.DLL|XboxAuthNet.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\XboxAuthNet.dll" SelfReg="false"/>
+    <ROW File="XboxAuthNet.Game.dll" Component_="XboxAuthNet.Game.dll" FileName="XBOXAU~2.DLL|XboxAuthNet.Game.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\XboxAuthNet.Game.dll" SelfReg="false"/>
+    <ROW File="XboxAuthNet.Game.Msal.dll" Component_="XboxAuthNet.Game.Msal.dll" FileName="XBOXAU~3.DLL|XboxAuthNet.Game.Msal.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="bin\x64\Release\net8.0-windows10.0.19041.0\XboxAuthNet.Game.Msal.dll" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="[|AI_AIP_FOLDER][|AI_AIP_FILENAME]-SetupFiles" PackageFileName="[|AI_AIP_FILENAME]" Languages="zh_TW" InstallationType="4" SummInfoMetadata="Page Count:450" UseLargeSchema="true" MsiPackageType="x64"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_zh_TW.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[LocalAppDataFolder]Programs\Idp\IdeaLauncher"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="App.xbf"/>
+    <ROW Feature_="MainFeature" Component_="CmlLib.Core.Auth.Microsoft.dll"/>
+    <ROW Feature_="MainFeature" Component_="CmlLib.Core.Commons.dll"/>
+    <ROW Feature_="MainFeature" Component_="CmlLib.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="CoreMessagingXP.dll"/>
+    <ROW Feature_="MainFeature" Component_="dcompi.dll"/>
+    <ROW Feature_="MainFeature" Component_="dwmcorei.dll"/>
+    <ROW Feature_="MainFeature" Component_="DwmSceneI.dll"/>
+    <ROW Feature_="MainFeature" Component_="DWriteCore.dll"/>
+    <ROW Feature_="MainFeature" Component_="ICSharpCode.SharpZipLib.dll"/>
+    <ROW Feature_="MainFeature" Component_="IdeaLauncher.dll"/>
+    <ROW Feature_="MainFeature" Component_="IdeaLauncher.exe"/>
+    <ROW Feature_="MainFeature" Component_="marshal.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.DirectManipulation.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Graphics.Display.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Graphics.Imaging.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Graphics.Imaging.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Identity.Client.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Identity.Client.Extensions.Msal.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.IdentityModel.Abstractions.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.InputStateManager.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.InteractiveExperiences.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Internal.FrameworkUdk.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.ML.OnnxRuntime.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Security.Authentication.OAuth.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Composition.OSSupport.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Designer.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Input.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Windowing.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Windowing.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Xaml.Controls.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.ui.xaml.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Xaml.Internal.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.UI.Xaml.Phone.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.ui.xaml.resources.19h1.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.ui.xaml.resources.common.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Core.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.AICapabilities.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.ContentSafety.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.ContentSafety.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Foundation.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Imaging.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Imaging.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.MachineLearning.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Text.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Text.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Video.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AI.Video.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.ApplicationModel.Background.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.ApplicationModel.Resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.ApplicationModel_7_.Resources.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AppLifecycle.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AppNotifications.Builder.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.AppNotifications.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.BadgeNotifications.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Foundation.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Management.Deployment.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Media.Capture.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.PushNotifications.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.SDK.NET.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Security.AccessControl.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Storage.Pickers.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Storage.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.System.Power.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.System.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Widgets.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Widgets.Projection.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Workloads.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Workloads.Resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Windows.Workloads.Resources_ec.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.WindowsAppRuntime.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.WinUI.dll"/>
+    <ROW Feature_="MainFeature" Component_="MRM.dll"/>
+    <ROW Feature_="MainFeature" Component_="NPUDetect.dll"/>
+    <ROW Feature_="MainFeature" Component_="PerceptiveStreaming.dll"/>
+    <ROW Feature_="MainFeature" Component_="PushNotificationsLongRunningTask.ProxyStub.dll"/>
+    <ROW Feature_="MainFeature" Component_="RestartAgent.exe"/>
+    <ROW Feature_="MainFeature" Component_="SessionHandleIPCProxyStub.dll"/>
+    <ROW Feature_="MainFeature" Component_="SevenZip.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Tensors.dll"/>
+    <ROW Feature_="MainFeature" Component_="WinRT.Runtime.dll"/>
+    <ROW Feature_="MainFeature" Component_="WinUIEdit.dll"/>
+    <ROW Feature_="MainFeature" Component_="wuceffectsi.dll"/>
+    <ROW Feature_="MainFeature" Component_="XboxAuthNet.dll"/>
+    <ROW Feature_="MainFeature" Component_="XboxAuthNet.Game.dll"/>
+    <ROW Feature_="MainFeature" Component_="XboxAuthNet.Game.Msal.dll"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] 無法安裝在 [WindowsTypeNT5XDisplay]。" DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] 無法安裝在 [WindowsTypeNT40Display]。" DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] 無法安裝在 [WindowsTypeNT50Display]。" DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 600)" Description="[ProductName] 無法安裝在 [WindowsTypeNT60Display]。" DescriptionLocId="AI.LaunchCondition.NoNT60" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] 無法安裝在 [WindowsType9XDisplay]。" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
+    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="IdeaLauncher" Directory_="SHORTCUTDIR" Name="IDEALA~1|IdeaLauncher" Component_="IdeaLauncher.exe" Target="[#IdeaLauncher.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="IdeaLauncher_1" Directory_="ProgramMenuFolder" Name="IDEALA~1|IdeaLauncher" Component_="IdeaLauncher.exe" Target="[#IdeaLauncher.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="IdeaLauncher_2" Directory_="DesktopFolder" Name="IDEALA~1|IdeaLauncher" Component_="IdeaLauncher.exe" Target="[#IdeaLauncher.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

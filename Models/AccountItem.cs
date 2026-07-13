@@ -1,4 +1,5 @@
-﻿using CmlLib.Core.Auth.Microsoft.Sessions;
+﻿using CmlLib.Core.Auth;
+using CmlLib.Core.Auth.Microsoft.Sessions;
 using XboxAuthNet.Game.Accounts;
 
 namespace IdeaLauncher.Models;

@@ -2,8 +2,11 @@
 using CmlLib.Core.Auth.Microsoft;
 using CmlLib.Core.Auth.Microsoft.Authenticators;
 using Microsoft.Identity.Client;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.Web.WebView2.Core;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -41,7 +44,7 @@ public class AuthService
     public async Task<MSession> AuthLogin()
     {
         var app = await MsalClientHelper.BuildApplicationWithCache(_clientId);
-        loginHandler = new JELoginHandlerBuilder().WithOAuthProvider(new MsalCodeFlowProvider(app)).Build();
+        var loginHandler = new JELoginHandlerBuilder().WithOAuthProvider(new MsalCodeFlowProvider(app)).Build();
         var session = await loginHandler.Authenticate();
 
         return session;
@@ -49,5 +52,6 @@ public class AuthService
         //return await loginHandler.AuthenticateInteractively();
     }
 
+    
 
 }

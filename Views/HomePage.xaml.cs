@@ -32,6 +32,10 @@ namespace IdeaLauncher.Views
     public sealed partial class HomePage : Page
     {
         public ObservableCollection<string> AccountList { get; set; } = new ObservableCollection<string>();
+
+        public JELoginHandler loginHandler { get; set; } = JELoginHandlerBuilder.BuildDefault();
+
+        private MinecraftService _currentSession;
         public HomePage()
         {
             InitializeComponent();
@@ -52,7 +56,7 @@ namespace IdeaLauncher.Views
 
         private void LoadAccounts()
         {
-            var loginHandler = JELoginHandlerBuilder.BuildDefault();
+            loginHandler = JELoginHandlerBuilder.BuildDefault();
             var accounts = loginHandler.AccountManager.GetAccounts();
             if (accounts != null) {
                     foreach (var account in accounts)
@@ -62,6 +66,7 @@ namespace IdeaLauncher.Views
                         AccountList.Add(jeAccount.Profile?.Username);
                     }
             }
+            var session = loginHandler.AuthenticateSilently();
         }
 
         private async void AddAccount_Click(object sender, RoutedEventArgs e)
@@ -70,6 +75,18 @@ namespace IdeaLauncher.Views
             var addAccount = new AuthService(clientId);
             await addAccount.AuthLogin();
             LoadAccounts();
+        }
+
+        private async void AccountListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var accounts = loginHandler.AccountManager.GetAccounts();
+            if (accounts.Count != 0 && accounts != null)
+            {
+                string SelectedAccountName = AccountListBox.SelectedItem.ToString()!;
+                var selectedAccount = accounts.GetJEAccountByUsername(SelectedAccountName);
+                var session = await loginHandler.Authenticate(selectedAccount);
+                MinecraftService.Current.CurrentSession = session;
+            }
         }
     }
 }
