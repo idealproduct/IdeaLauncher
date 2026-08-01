@@ -37,15 +37,13 @@ const items: MenuProps['items'] = [
   },
 ];
 
-
-const settingItems: MenuProps ['items'] = [
+const settingItems: MenuProps['items'] = [
   {
     key: '/settings',
     icon: <SettingOutlined />,
     label: 'Settings'
   },
 ];
-
 
 const App: React.FC = () => {
   const navigate = useNavigate();
