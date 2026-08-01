@@ -1,4 +1,4 @@
-import { contextBridge } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
@@ -20,3 +20,15 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.api = api
 }
+
+contextBridge.exposeInMainWorld(
+    "api",
+    {
+
+        loginMicrosoft: () =>
+            ipcRenderer.invoke(
+                "auth:microsoft"
+            )
+
+    }
+);
