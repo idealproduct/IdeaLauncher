@@ -1,6 +1,7 @@
 import express from "express";
 import { Server } from "http";
-import open from "open";
+// import open from "open";
+import { shell } from "electron";
 
 import { MicrosoftAuth } from "./MicrosoftAuth";
 
@@ -44,7 +45,7 @@ export class OAuthServer {
                         await this.auth.getLoginUrl();
 
 
-                    await open(url);
+                    await shell.openExternal(url);
 
                 }
             );
