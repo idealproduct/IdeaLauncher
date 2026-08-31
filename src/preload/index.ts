@@ -4,6 +4,7 @@ import { electronAPI } from '@electron-toolkit/preload'
 // Custom APIs for renderer
 const api = {
   loginMicrosoft: () => ipcRenderer.invoke("auth:microsoft"),
+  getAccounts: () => ipcRenderer.invoke("auth:getAccounts"),
 };
 
 // Use `contextBridge` APIs to expose Electron APIs to

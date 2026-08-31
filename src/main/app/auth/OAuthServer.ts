@@ -4,6 +4,7 @@ import { Server } from "http";
 import { shell } from "electron";
 
 import { MicrosoftAuth } from "./MicrosoftAuth";
+import {MinecraftAccount} from "./MicrosoftAuth";
 
 const PORT = 25555;
 
@@ -23,9 +24,9 @@ export class OAuthServer {
 
 
 
-    async login() {
+    async login(): Promise<MinecraftAccount> {
 
-        return new Promise(async (resolve, reject) => {
+        return new Promise<MinecraftAccount>(async (resolve, reject) => {
 
 
             const app = express();

@@ -64,6 +64,8 @@ export class MicrosoftAuth {
             redirectUri:
                 "http://localhost:25555/auth",
 
+            prompt: "select_account",
+
         });
 
     }

@@ -12,13 +12,10 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Instances from './pages/Instances';
 import Settings from './pages/Settings';
+import { useEffect, useState } from "react";
 
 
 const { Sider, Content } = Layout;
-
-const onChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
 
 const onSearch = (value: string) => {
   console.log('search:', value);
@@ -46,15 +43,43 @@ const settingItems: MenuProps['items'] = [
 ];
 
 const App: React.FC = () => {
+  const [accounts, setAccounts] = useState<any[]>([]);
+  const [selectedAccount, setSelectedAccount] = useState<string>();
   const navigate = useNavigate();
 
-  const login = async () => {
-    console.log("login clicked");
+  const handleAccountChange = (xuid: string) => {
 
+    setSelectedAccount(xuid);
+
+    const account = accounts.find(
+        account => account.xboxXuid === xuid
+    );
+
+    console.log(account);
+
+  };  
+
+  const login = async () => {
     const account = await window.api.loginMicrosoft();
 
     console.log(account);
+
+    setAccounts(await window.api.getAccounts());
   };
+
+  useEffect(() => {
+
+    const load = async () => {
+
+        const list = await window.api.getAccounts();
+
+        setAccounts(list);
+
+    };
+
+    load();
+
+  }, []);
 
 
   return (
@@ -120,23 +145,14 @@ const App: React.FC = () => {
             style={{
                 minWidth: 180,
               }}
-            showSearch={{ optionFilterProp: 'label', onSearch }}
+            value={selectedAccount}
+            showSearch={{optionFilterProp: 'label', onSearch}}
             placeholder="Select a person"
-            onChange={onChange}
-            options={[
-              {
-                value: 'jack',
-                label: 'Jack',
-              },
-              {
-                value: 'lucy',
-                label: 'Lucy',
-              },
-              {
-                value: 'tom',
-                label: 'Tom',
-              },
-            ]}
+            onChange={handleAccountChange}
+            options={accounts.map(account => ({
+                value: account.xboxXuid,
+                label: account.username,
+            }))}
             popupRender={(menu) => (
               <>
                 {menu}
