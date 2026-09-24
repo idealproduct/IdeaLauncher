@@ -9,9 +9,15 @@ declare global {
 
             getAccounts(): Promise<MinecraftAccount[]>;
 
+            getMinecraftVersions(): Promise<{
+                success: boolean;
+                data: import("@xmcl/installer").MinecraftVersion[];
+                error?: string;
+            }>;
+
         };
 
     }
 }
 
-export {};
+export { };

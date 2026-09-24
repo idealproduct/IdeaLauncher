@@ -1,6 +1,6 @@
 import { ipcMain } from "electron";
 import { OAuthServer } from "../auth/OAuthServer";
-import { accountManager } from "../..";
+import { accountManager } from "../auth/manager";
 
 
 export function registerAuthIPC() {
@@ -32,5 +32,9 @@ export function registerAuthIPC() {
 
         }
     );
+
+    ipcMain.handle("auth:getSelectedAccount", () => accountManager.getSelectedAccountId());
+    ipcMain.handle("auth:setSelectedAccount", (_event, xuid: string) => accountManager.setSelectedAccount(xuid));
+    ipcMain.handle("auth:logout", (_event, xuid: string) => accountManager.removeAccount(xuid));
 
 }

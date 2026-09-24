@@ -1,5 +1,19 @@
+overrides:
+  undici@7: 7.29.1
+
 allowBuilds:
   core-js: true
   electron: true
   electron-winstaller: true
   esbuild: true
+
+# 如果是單一專案而非 monorepo，只需宣告這兩行即可
+packages:
+  - '.'
+
+# 在此加入封鎖外來子依賴的關閉設定
+blockExoticSubdeps: false
+
+# node-linker: hoisted
+
+nodeLinker: hoisted

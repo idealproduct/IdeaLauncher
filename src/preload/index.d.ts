@@ -1,30 +1,81 @@
 import { ElectronAPI } from '@electron-toolkit/preload'
+import type { MinecraftVersion } from '@xmcl/installer';
 
-
-export {};
+export { };
 
 declare global {
   interface Window {
     electron: ElectronAPI
     api: {
 
-            loginMicrosoft:
-                () => Promise<{
-                    
-                    username: string;
+      loginMicrosoft:
+      () => Promise<{
+        username: string;
+        minecraftAccessToken: string;
+        expiresIn: number;
+        xboxXuid: string;
+        xboxUhs: string;
+        avatar?: string;
+      }>;
 
-                    minecraftAccessToken: string;
+      getMinecraftVersions:
+      () => Promise<{
+        success: boolean;
+        data: MinecraftVersion[];
+        error?: string;
+      }>;
 
-                    expiresIn: number;
+      getAccounts: () => Promise<{
+        username: string;
+        xboxXuid: string;
+        avatar?: string;
+        expiresAt: number;
+        isExpired: boolean;
+      }[]>;
+      getSelectedAccount: () => Promise<string | undefined>;
+      setSelectedAccount: (xuid: string) => Promise<unknown>;
+      logout: (xuid: string) => Promise<{
+        username: string;
+        xboxXuid: string;
+        avatar?: string;
+        expiresAt: number;
+        isExpired: boolean;
+      }[]>;
 
-                    xboxXuid: string;
+      getInstances: () => Promise<{
+        id: string;
+        name: string;
+        minecraftVersion: string;
+        loader: 'vanilla' | 'forge' | 'fabric' | 'neoforge';
+        minMemory: number;
+        maxMemory: number;
+        jvmArgs: string[];
+        javaMajorVersion: number;
+        javaPathOverride?: string;
+        offlineMode: boolean;
+        offlineUsername?: string;
+      }[]>;
 
-                    xboxUhs: string;
+      updateInstance: (payload: {
+        id: string;
+        name: string;
+        minMemory: number;
+        maxMemory: number;
+        jvmArgs: string[];
+        javaPathOverride?: string;
+        offlineMode: boolean;
+        offlineUsername?: string;
+      }) => Promise<unknown>;
 
-                    avatar?: string;
+      launchInstance: (instanceId: string) => Promise<{ success: true }>;
+      deleteInstance: (instanceId: string, deleteFiles?: boolean) => Promise<{ success: true }>;
 
-                }>;
-
-        };
+      createInstance: (payload: {
+        name: string;
+        version: string;
+        loader: 'vanilla' | 'forge' | 'fabric' | 'neoforge';
+        launchAfterInstall?: boolean;
+      }) => Promise<unknown>;
+    };
   }
 }
