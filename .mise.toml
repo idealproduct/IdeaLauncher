@@ -1,0 +1,12 @@
+[tools]
+node = "22.23.1"
+pnpm = "latest"
+
+[env]
+# Intercept Windows AppData & Caches -> redirect into your project's .win-env folder on Dev Drive
+APPDATA        = "{{config_root}}/.win-env/AppData/Roaming"
+LOCALAPPDATA   = "{{config_root}}/.win-env/AppData/Local"
+TEMP           = "{{config_root}}/.win-env/Temp"
+TMP            = "{{config_root}}/.win-env/Temp"
+ELECTRON_CACHE = "{{config_root}}/.win-env/Cache/Electron"
+NPM_CONFIG_CACHE = "{{config_root}}/.win-env/Cache/npm"
