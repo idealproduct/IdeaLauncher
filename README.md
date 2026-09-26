@@ -186,43 +186,43 @@ Authentication-related implementation is still under development.
 * [x] Minecraft instance structure
 * [x] Basic instance management
 * [x] Minecraft launching
-* [ ] Minecraft version installer
-* [ ] Instance editing
+* [x] Minecraft version installer
+* [x] Instance editing
 * [ ] Instance import/export
 * [ ] Instance cloning
 
 ### Account
 
-* [ ] Microsoft login
-* [ ] Multiple account support
-* [ ] Account switching
+* [x] Microsoft login
+* [x] Multiple account support
+* [x] Account switching
 
 ### Java
 
-* [ ] Automatic Java installation
-* [ ] Java version management
-* [ ] Automatic Java version selection
+* [x] Automatic Java installation
+* [x] Java version management
+* [x] Automatic Java version selection
 
 ### GPU
 
-* [ ] Detect available GPUs
-* [ ] GPU selection UI
-* [ ] Per-instance GPU configuration
-* [ ] Verify selected adapter at launch
+* [x] Detect available GPUs
+* [x] GPU selection UI
+* [x] Per-instance GPU configuration
+* [x] Verify selected adapter at launch
 
 ### UI
 
 * [ ] Home page
-* [ ] Instance management
+* [x] Instance management
 * [ ] Settings
-* [ ] Download progress
+* [x] Download progress
 * [ ] Launch status
 * [ ] Error reporting
 * [ ] Dark/light theme
 
 ### Distribution
 
-* [ ] Windows packaging
+* [x] Windows packaging
 * [ ] Linux packaging
 * [ ] macOS packaging
 * [ ] Automatic updates
@@ -245,4 +245,4 @@ Minecraft is a trademark of Mojang Studios. IdeaLauncher is not affiliated with 
 
 ## License
 
-License information will be added when the project's licensing terms are finalized.
+IdeaLauncher is licensed under the [MIT License](LICENSE).
