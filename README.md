@@ -1,12 +1,15 @@
 # idealauncher
 
-An Electron application with React and TypeScript
+A Minecraft Launcher made by Denzi
 
-## Recommended IDE Setup
+## Feature
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+1. **Support selecting the GPU used in Minecraft**.
+2. Basic Function for **install Minecraft** and **launch Minecraft**.
+3. Support **Mod Loader** installation.
+4. Support **Multiple Accounts**.
 
-## Project Setup
+## Development
 
 ### Install
 
@@ -14,7 +17,7 @@ An Electron application with React and TypeScript
 $ pnpm install
 ```
 
-### Development
+### Launch IdeaLauncher
 
 ```bash
 $ pnpm dev
