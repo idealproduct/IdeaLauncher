@@ -34,14 +34,3 @@ download and installation workflow for Minecraft instances.
 - **Launcher UI refresh**
   - Updated the navigation, dark theme, account controls, home screen, and
     instance management experience.
-
-### Known limitations
-
-- Download tasks are kept in memory and are not restored automatically after
-  restarting the launcher.
-- Some CurseForge projects restrict third-party downloads. Those files must be
-  downloaded from the official CurseForge pages through the launcher's
-  built-in download flow.
-- Imported and installed content must still be enabled in-game where required.
-  Shaders require an instance with Iris, OptiFine, or another compatible
-  implementation.
