@@ -35,13 +35,6 @@ download and installation workflow for Minecraft instances.
   - Updated the navigation, dark theme, account controls, home screen, and
     instance management experience.
 
-### Configuration
-
-CurseForge features require an API key. Configure it with
-`scripts/configure-curseforge.cjs`, or provide `CURSEFORGE_API_KEY` or
-`IDEALAUNCHER_CURSEFORGE_API_KEY` in the environment. The key is used only by
-the Electron main process; the frontend does not expose it.
-
 ### Known limitations
 
 - Download tasks are kept in memory and are not restored automatically after
