@@ -1,22 +1,33 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+const icon = join(__dirname, '../../resources/icon.png')
 import { registerAuthIPC } from "./app/ipc/auth";
-import { AccountManager } from './app/auth/AccountManager';
+import { setupVersionIPC } from "./app/installer/version";
+import { setupContentIPC } from './app/content/ipc';
+import { accountManager } from './app/auth/manager';
+import { updateElectronApp } from 'update-electron-app';
+
+// const { updateElectronApp } = require('update-electron-app')
+updateElectronApp()
 
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1120,
+    height: 760,
+    minWidth: 640,
+    minHeight: 480,
+    backgroundColor: '#101d26',
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     icon: icon,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
+      sandbox: false,
+      contextIsolation: true,
+      nodeIntegration: false,
     }
   })
 
@@ -56,6 +67,8 @@ app.whenReady().then(() => {
   ipcMain.on('ping', () => console.log('pong'))
 
   registerAuthIPC();
+  setupVersionIPC();
+  setupContentIPC();
 
   createWindow()
 
@@ -75,7 +88,7 @@ app.on('window-all-closed', () => {
   }
 })
 
-export const accountManager = new AccountManager();
+export { accountManager };
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

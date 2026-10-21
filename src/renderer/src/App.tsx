@@ -2,16 +2,24 @@ import React from 'react';
 import {
   FolderOutlined,
   HomeFilled,
+  LogoutOutlined,
   PlusOutlined,
-  SettingOutlined
+  SettingOutlined,
+  CompassOutlined,
+  DownloadOutlined
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Button, ConfigProvider, Divider, Layout, Menu, Select } from 'antd';
-import october from './assets/image.png';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Avatar, Button, ConfigProvider, Divider, Layout, Menu, Select, Tag, message, theme } from 'antd';
+import october from './assets/october.png';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Instances from './pages/Instances';
 import Settings from './pages/Settings';
+import Discover from './pages/Discover';
+import Downloads from './pages/Downloads';
+import DownloadPrompt from './components/DownloadPrompt';
+import { useDownloads } from './hooks/useDownloads';
+import { isDownloadActive } from '../../shared/content';
 import { useEffect, useState } from "react";
 
 
@@ -32,6 +40,8 @@ const items: MenuProps['items'] = [
     icon: <FolderOutlined />,
     label: 'Instances'
   },
+  { key: '/discover', icon: <CompassOutlined />, label: '探索內容' },
+  { key: '/downloads', icon: <DownloadOutlined />, label: '下載中心' },
 ];
 
 const settingItems: MenuProps['items'] = [
@@ -42,69 +52,125 @@ const settingItems: MenuProps['items'] = [
   },
 ];
 
+interface AccountSummary {
+  xboxXuid: string;
+  username: string;
+  avatar?: string;
+  expiresAt: number;
+  isExpired: boolean;
+}
+
 const App: React.FC = () => {
-  const [accounts, setAccounts] = useState<any[]>([]);
+  const [accounts, setAccounts] = useState<AccountSummary[]>([]);
   const [selectedAccount, setSelectedAccount] = useState<string>();
+  const [isAccountLoading, setIsAccountLoading] = useState(true);
+  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const { tasks: downloads } = useDownloads();
+  const activeDownloads = downloads.filter(isDownloadActive).length;
 
-  const handleAccountChange = (xuid: string) => {
+  const accountOptions = accounts.map((account) => ({
+    value: String(account.xboxXuid),
+    label: account.username,
+    account,
+  }));
 
+  const handleAccountChange = async (xuid: string): Promise<void> => {
     setSelectedAccount(xuid);
+    await window.api.setSelectedAccount(xuid);
+  };
 
-    const account = accounts.find(
-        account => account.xboxXuid === xuid
-    );
+  const refreshAccounts = async (): Promise<void> => {
+    const list = await window.api.getAccounts();
+    const savedAccount = await window.api.getSelectedAccount();
+    setAccounts(list);
+    if (savedAccount && list.some((account) => account.xboxXuid === savedAccount)) {
+      setSelectedAccount(savedAccount);
+    } else if (list[0]) {
+      setSelectedAccount(list[0].xboxXuid);
+      await window.api.setSelectedAccount(list[0].xboxXuid);
+    } else {
+      setSelectedAccount(undefined);
+    }
+  };
 
-    console.log(account);
-
-  };  
-
-  const login = async () => {
-    const account = await window.api.loginMicrosoft();
-
-    console.log(account);
-
-    setAccounts(await window.api.getAccounts());
+  const login = async (): Promise<void> => {
+    try {
+      await window.api.loginMicrosoft();
+      await refreshAccounts();
+      setIsAccountMenuOpen(false);
+      message.success('帳號登入成功');
+    } catch (error) {
+      message.error(error instanceof Error ? error.message : '登入失敗');
+    }
   };
 
   useEffect(() => {
-
-    const load = async () => {
-
-        const list = await window.api.getAccounts();
-
-        setAccounts(list);
-
+    const load = async (): Promise<void> => {
+      try {
+        await refreshAccounts();
+      } catch (error) {
+        message.error(error instanceof Error ? error.message : '無法載入帳號');
+      } finally {
+        setIsAccountLoading(false);
+      }
     };
-
-    load();
-
+    void load();
   }, []);
+
+  const selectedAccountInfo = accounts.find((account) => account.xboxXuid === selectedAccount);
+
+  const logout = async (): Promise<void> => {
+    if (!selectedAccount) return;
+    try {
+      const nextAccounts = await window.api.logout(selectedAccount);
+      setAccounts(nextAccounts);
+      const nextSelectedAccount = await window.api.getSelectedAccount();
+      setSelectedAccount(nextSelectedAccount);
+      setIsAccountMenuOpen(false);
+      message.success('帳號已登出');
+    } catch (error) {
+      message.error(error instanceof Error ? error.message : '登出失敗');
+    }
+  };
 
 
   return (
-    <Layout className="h-full w-full">
+    <ConfigProvider theme={{
+      algorithm: theme.darkAlgorithm,
+      token: {
+        colorPrimary: '#36cbb5', colorBgBase: '#101b24', colorBgContainer: '#15232e',
+        colorBgElevated: '#192a36', colorBorder: '#304653', colorText: '#edf5f7',
+        colorTextSecondary: '#a5b8c3', borderRadius: 10,
+        fontFamily: '"Segoe UI", "Microsoft JhengHei", sans-serif', controlHeight: 38,
+      },
+    }}>
+    <Layout className="launcher-shell h-full w-full">
 
       <Sider
         collapsible
         collapsed={true}
-        collapsedWidth="70"
+        collapsedWidth={72}
         trigger={null}
-        style={{ backgroundColor: '#0d8aa3' }}
+        className="launcher-sidebar"
       >
 
-        <div className="demo-logo-vertical" />
+        <div className="launcher-brand" title="IdeaLauncher" aria-label="IdeaLauncher">i<span>◈</span></div>
 
-        <div className="flex h-full flex-col text-10xl">
+        <div className="sidebar-navigation flex flex-col">
 
           <ConfigProvider
             theme={{
               components: {
                 Menu: {
-                  itemHeight: 56,
-                  collapsedIconSize: 24,
-                  iconSize: 28,
-                  darkItemBg: '#0d8aa3',
+                  itemHeight: 48,
+                  collapsedWidth: 72,
+                  collapsedIconSize: 22,
+                  iconSize: 22,
+                  darkItemBg: 'transparent',
+                  darkItemSelectedBg: '#244b4b',
+                  darkItemSelectedColor: '#73ead6',
                 },
               },
             }}
@@ -113,7 +179,7 @@ const App: React.FC = () => {
             <Menu
               theme="dark"
               mode="inline"
-              defaultSelectedKeys={['/']}
+              selectedKeys={[pathname]}
               items={items}
               onClick={({ key }) => navigate(key)}
             />
@@ -122,7 +188,7 @@ const App: React.FC = () => {
               <Menu
                 theme="dark"
                 mode="inline"
-                selectable={false}
+                selectedKeys={[pathname]}
                 items={settingItems}
                 onClick={({ key }) => navigate(key)}
               />
@@ -134,58 +200,97 @@ const App: React.FC = () => {
       </Sider>
 
       <Content
-        className="relative bg-cover bg-center w-full h-full"
+        className="launcher-content relative bg-cover bg-center w-full h-full"
         style={{
-          backgroundImage: `url(${october})`,
+          backgroundImage: `linear-gradient(90deg, rgba(10, 21, 29, .95), rgba(10, 21, 29, .82)), url(${october})`,
         }}
       >
 
-        <div className="absolute top-4 right-4 z-50">
-          <Select
-            style={{
-                minWidth: 180,
+        <div className="launcher-topbar"><span className="launcher-wordmark">IDEA<span>LAUNCHER</span></span><div className="topbar-actions"><Button type="text" icon={<DownloadOutlined />} onClick={() => navigate('/downloads')}>下載{activeDownloads ? ` (${activeDownloads})` : ''}</Button><div className="launcher-account">
+          <ConfigProvider
+            theme={{
+              token: {
+                colorBgElevated: '#071b38',
+                colorText: '#e6f0ff',
+                colorTextSecondary: '#9bb2d1',
+                colorBorder: '#244b7a',
+              },
+              components: {
+                Select: {
+                  selectorBg: '#0b2346',
+                  optionActiveBg: '#12345f',
+                  optionSelectedBg: '#1b477a',
+                  optionSelectedColor: '#ffffff',
+                  colorTextPlaceholder: '#9bb2d1',
+                },
+              },
+            }}
+          >
+            <Select
+              key={accounts.map((account) => account.xboxXuid).join('|')}
+              className="account-select"
+              loading={isAccountLoading}
+              style={{ width: 'clamp(180px, 24vw, 280px)', maxWidth: 'calc(100vw - 1.5rem)' }}
+              value={selectedAccount}
+              open={isAccountMenuOpen}
+              onOpenChange={setIsAccountMenuOpen}
+              showSearch={{ optionFilterProp: 'label', onSearch }}
+              placeholder="選擇 Minecraft 帳號"
+              onChange={handleAccountChange}
+              options={accountOptions}
+              optionRender={(option) => {
+                const account = option.data.account;
+                return (
+                  <div className="flex items-center gap-3 py-1">
+                    <Avatar size={30} src={account.avatar} className="bg-cyan-700">{account.username[0]}</Avatar>
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate font-medium text-slate-100">{account.username}</div>
+                      <div className="text-xs text-slate-400">{account.isExpired ? '需要重新登入' : '已連線'}</div>
+                    </div>
+                    <Tag color={account.isExpired ? 'warning' : 'success'}>{account.isExpired ? '過期' : '有效'}</Tag>
+                  </div>
+                );
               }}
-            value={selectedAccount}
-            showSearch={{optionFilterProp: 'label', onSearch}}
-            placeholder="Select a person"
-            onChange={handleAccountChange}
-            options={accounts.map(account => ({
-                value: account.xboxXuid,
-                label: account.username,
-            }))}
-            popupRender={(menu) => (
-              <>
-                {menu}
+              popupRender={(menu) => (
+                <div className="w-full max-w-[calc(100vw-2rem)] rounded-xl bg-[#071b38] p-1">
+                  {menu}
+                  <Divider className="my-2 border-slate-700" />
+                  {selectedAccountInfo?.isExpired && (
+                    <div className="mb-2 rounded-lg bg-amber-500/10 px-3 py-2 text-xs text-amber-200">
+                      此帳號的 Minecraft 金鑰已過期，請重新登入。
+                    </div>
+                  )}
+                  <div className="flex flex-wrap gap-2">
+                    <Button type="text" icon={<PlusOutlined />} className="flex-1 text-slate-200" onMouseDown={(event) => event.preventDefault()} onClick={login}>
+                      新增帳號
+                    </Button>
+                    <Button type="text" danger icon={<LogoutOutlined />} disabled={!selectedAccount} onMouseDown={(event) => event.preventDefault()} onClick={logout}>
+                      登出
+                    </Button>
+                  </div>
+                </div>
+              )}
+            />
+          </ConfigProvider>
+        </div>
 
-                <Divider style={{ margin: "8px 0" }} />
-
-                <Button
-                  type="text"
-                  icon={<PlusOutlined />}
-                  block
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                  }}
-                  onClick={login}
-                >
-                  新增帳號
-                </Button>
-              </>
-            )}
-          />
-         </div>
-
+        </div>
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
 
           <Route path="/instances" element={<Instances />} />
 
           <Route path="/settings" element={<Settings />} />
+          <Route path="/discover" element={<Discover />} />
+          <Route path="/downloads" element={<Downloads />} />
         </Routes>
+        <DownloadPrompt tasks={downloads} />
 
       </Content>
 
     </Layout>
+    </ConfigProvider>
   );
 };
 

@@ -4,5 +4,6 @@ out
 .DS_Store
 .eslintcache
 *.log*
+dist-final
 
 .win-env

@@ -14,11 +14,15 @@ const config: Configuration = {
 
 export interface MinecraftAccount {
 
+    id: string;
+
     username: string;
 
     minecraftAccessToken: string;
 
     expiresIn: number;
+
+    expiresAt?: number;
 
     xboxXuid: string;
 
@@ -145,12 +149,30 @@ export class MicrosoftAuth {
 
             );
 
+        const profileResponse = await fetch(
+            "https://api.minecraftservices.com/minecraft/profile",
+            {
+                headers: {
+                    Authorization: `Bearer ${minecraft.access_token}`,
+                },
+            }
+        );
+
+        if (!profileResponse.ok) {
+            throw new Error("Unable to get Minecraft profile");
+        }
+
+        const profile = await profileResponse.json();
+
+
 
 
         return {
 
+            id: profile.id,
+
             username:
-                minecraft.username,
+                profile.name,
 
 
             minecraftAccessToken:

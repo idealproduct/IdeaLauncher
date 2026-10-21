@@ -1,24 +1,30 @@
 {
   "name": "idealauncher",
-  "version": "1.0.0",
-  "description": "An Electron application with React and TypeScript",
+  "version": "1.0.1",
+  "description": "A Minecraft launcher built with Electron and Vite.",
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "author": "denzi",
+  "homepage": "https://github.com/idealproduct/IdeaLauncher",
   "scripts": {
+    "test:launcher": "node --test scripts/test-launcher.cjs",
     "format": "prettier --write .",
     "lint": "eslint --cache .",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
-    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "typecheck": "pnpm run typecheck:node && pnpm run typecheck:web",
     "start": "electron-vite preview",
     "dev": "electron-vite dev",
-    "build": "npm run typecheck && electron-vite build",
+    "build": "pnpm run typecheck && electron-vite build",
     "postinstall": "electron-builder install-app-deps",
-    "build:unpack": "npm run build && electron-builder --dir",
-    "build:win": "npm run build && electron-builder --win",
+    "build:unpack": "pnpm run build && electron-builder --dir",
+    "build:win": "pnpm run build && electron-builder --win",
     "build:mac": "electron-vite build && electron-builder --mac",
-    "build:linux": "electron-vite build && electron-builder --linux"
+    "build:linux": "electron-vite build && electron-builder --linux",
+    "buildx": "pnpm run build && electron-builder",
+    "efstart": "electron-forge start",
+    "efpackage": "pnpm run build && electron-forge package",
+    "efmake": "pnpm run build && electron-forge make",
+    "efpublish": "pnpm run build && electron-forge publish"
   },
   "dependencies": {
     "@ant-design/icons": "^6.3.2",
@@ -37,9 +43,14 @@
     "express": "^5.2.1",
     "open": "^11.0.0",
     "react-router-dom": "^7.18.2",
-    "tailwind": "^4.0.0"
+    "tailwind": "^4.0.0",
+    "undici": "7.29.1",
+    "update-electron-app": "^3.3.0"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^7.11.2",
+    "@electron-forge/maker-squirrel": "^7.11.2",
+    "@electron-forge/publisher-github": "^7.11.2",
     "@electron-toolkit/eslint-config-ts": "^3.1.0",
     "@electron-toolkit/tsconfig": "^2.0.0",
     "@tailwindcss/vite": "^4.3.3",
@@ -51,7 +62,6 @@
     "electron": "^39.2.6",
     "electron-builder": "^26.0.12",
     "electron-vite": "^5.0.0",
-    "eslint": "^9.39.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
@@ -66,5 +76,19 @@
       "electron",
       "esbuild"
     ]
+  },
+  "build": {
+    "appId": "com.denzi.app",
+    "productName": "IdeaLauncher",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idealproduct/IdeaLauncher.git"
   }
 }
